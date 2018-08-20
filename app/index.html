@@ -1,0 +1,83 @@
+<!-- @author Nagarjuna Yadav K -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Node Js App Using Crypto JS</title>
+    <meta author="Nagarjuna Yadav K">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap.min.css">
+    <script src="assets/jquery-1.12.4.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+    function encryptionCall() {
+        var encryptedInput = $('#encryptionInputVal').val();
+        // console.log(encryptedInput);
+        if (encryptedInput !== '' && encryptedInput !== null) {
+            $.ajax({
+                type: "POST",
+                url: "/encryption",
+                contentType: "application/json",
+                dataType: 'json',
+                headers: { 'Access-Control-Allow-Origin': '*', crossDomain: false, authkey: encryptedInput },
+                success: function(data) {
+                    // console.log(data);
+                    $('#decryptionInputVal').val(data.encryptionVal);
+                }
+            });
+        } else {
+            alert("Please enter input value.")
+        }
+    };
+
+    function decryptionCall() {
+        var decryptedInput = $('#decryptionInputVal').val();
+        // console.log(decryptedInput);
+        $.ajax({
+            type: "POST",
+            url: "/decryption",
+            contentType: "application/json",
+            dataType: 'json',
+            headers: { 'Access-Control-Allow-Origin': '*', crossDomain: false, authkey: decryptedInput },
+            success: function(data) {
+                // console.log(data);
+                $('#decrypt-encrypt').text(data.decryptionVal);
+            }
+        });
+    };
+    </script>
+</head>
+
+<body>
+    <div class="container">
+
+        <head>
+            <h1>Crypto JS Encryption and  Decryption</h1>
+        </head>
+        <div class="container">
+            <div class="form-group">
+                <input type="text" name="encryptionInputVal" id="encryptionInputVal" class="form-control">
+            </div>
+            <div class="form-group">
+                <button type="submit" onclick="encryptionCall();" class="btn btn-default"> Get Encrypted Value</button>
+            </div>
+            <div class="form-group">
+                <input type="text" name="decryptionInputVal" id="decryptionInputVal" class="form-control" readonly>
+            </div>
+            <div class="form-group">
+                <button type="submit" onclick="decryptionCall()" class="btn btn-default"> Get Decrypted Value</button>
+            </div>
+            <div>
+                Decryption to encrytion === <b><span id="decrypt-encrypt"></span></b>
+            </div>
+        </div>
+
+        <br/>
+        <br/>
+        <br/>
+        <footer>
+            ©Nagarjuna Yadav K.
+        </footer>
+    </div>
+</body>
+
+</html>

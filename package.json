@@ -1,0 +1,32 @@
+{
+  "name": "nodejs-crypto-example",
+  "version": "1.0.0",
+  "description": "cryptojs example",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nagarjunayadavk/nodejs-crypto-example.git"
+  },
+  "keywords": [
+    "nagarjunayadavk",
+    "Nagarjuna",
+    "Yadav",
+    "Naga",
+    "nagarjunayadavk@gmail.com",
+    "cryptojs"
+  ],
+  "author": "nagarjunayadavk@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nagarjunayadavk/nodejs-crypto-example/issues"
+  },
+  "homepage": "https://github.com/nagarjunayadavk/nodejs-crypto-example#readme",
+  "dependencies": {
+    "crypto-js": "^3.1.9-1",
+    "express": "^4.16.3"
+  }
+}
