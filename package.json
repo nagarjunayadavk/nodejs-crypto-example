@@ -27,6 +27,6 @@
   "homepage": "https://github.com/nagarjunayadavk/nodejs-crypto-example#readme",
   "dependencies": {
     "crypto-js": "^3.1.9-1",
-    "express": "^4.16.3"
+    "express": "^4.17.3"
   }
 }
